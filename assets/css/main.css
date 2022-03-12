@@ -28,6 +28,15 @@
   border: 2px solid black !important;
 }
 
+a {
+  text-decoration: none;
+  color: green;
+}
+
+.green--text {
+  color: green;
+}
+
 @media only screen and (max-width: 600px) {
   h2.title1 {
     font-size: 15px;

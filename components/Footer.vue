@@ -2,18 +2,18 @@
   <v-footer dark padless>
     <v-card flat tile class="black white--text py-12 px-5" width="100%">
       <v-row class="d-flex flex-row justify-center">
-        <v-row
-          class="d-flex flex-row justify-center"
-        >
+        <v-row class="d-flex flex-row justify-center">
           <v-col cols="7" lg="3" md="3" sm="5" xs="6">
-            <v-toolbar color="transparent" flat>
-              <v-badge color="#D5F0DV">
-                <v-img src="/img/1.png" contain width="30"></v-img>
-              </v-badge>
-              <v-toolbar-title class="ml-4">
-                <span class="green--text"><strong>Grocery</strong></span>
-              </v-toolbar-title>
-            </v-toolbar>
+            <nuxt-link to="/">
+              <v-toolbar color="transparent" flat>
+                <v-badge color="#D5F0DV">
+                  <v-img src="/img/1.png" contain width="30"></v-img>
+                </v-badge>
+                <v-toolbar-title class="ml-4">
+                  <span class="green--text"><strong>Grocery</strong></span>
+                </v-toolbar-title>
+              </v-toolbar>
+            </nuxt-link>
           </v-col>
           <v-col cols="7" lg="3" md="3" sm="5" xs="6">
             <v-toolbar style="border: 1px solid green" color="transparent" flat>
@@ -55,7 +55,9 @@
           </v-card-text>
           <v-card-text class="grey--text">Toporkov Sergey</v-card-text>
           <v-card-text class="grey--text mt-n4">+79161031712</v-card-text>
-          <v-card-text class="grey--text mt-n4">ToporkovSergeyDev.com</v-card-text>
+          <v-card-text class="grey--text mt-n4"
+            >ToporkovSergeyDev.com</v-card-text
+          >
           <v-card-text class="grey--text mt-n4">LinkedIn</v-card-text>
         </v-col>
       </v-row>

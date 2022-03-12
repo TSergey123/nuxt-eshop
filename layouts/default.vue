@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <NavBar />
-    <nuxt />
+    <nuxt style="height: 100%" />
     <Footer />
   </v-app>
 </template>
