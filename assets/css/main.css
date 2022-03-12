@@ -1,0 +1,53 @@
+.absolute-item {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  text-align: center;
+}
+.mtop {
+  margin-top: 5rem;
+}
+.marginLeft {
+  margin-left: -5rem;
+}
+
+.mbottom {
+  margin-bottom: 5rem;
+}
+
+.v-card.borderme {
+  border: 2px solid green !important;
+}
+
+.v-card.borderout {
+  border: 1px solid #d5f0db !important;
+}
+
+.theme--light.v-sheet--outlined.mobiles {
+  border: 2px solid black !important;
+}
+
+@media only screen and (max-width: 600px) {
+  h2.title1 {
+    font-size: 15px;
+  }
+  h2.title2 {
+    font-size: 15px;
+  }
+  .top {
+    margin-top: 1rem;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .top {
+    margin-top: 5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .top {
+    margin-top: 6rem;
+  }
+}
