@@ -44,7 +44,7 @@ export default {
           title: 'Kareem Benji',
           subtitle: 'CPO on Maqua',
           bio: 'I enjoy using Vuetify',
-          rating: '3.5'
+          rating: 3.5
         },
       ],
     }

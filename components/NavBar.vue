@@ -5,7 +5,8 @@
         <v-img src="/img/1.png" contain width="30" />
       </v-badge>
       <v-toolbar-title class="ml-4">
-        <span class="green--text">e</span><strong class="green--text">Grocery</strong>
+        <span class="green--text">e</span
+        ><strong class="green--text">Grocery</strong>
       </v-toolbar-title>
     </nuxt-link>
     <v-spacer></v-spacer>
@@ -14,8 +15,8 @@
         <v-icon small color="#FF6D59">favorite</v-icon>
       </v-avatar>
     </v-badge>
-    <v-badge color="#41AB55" overlap content="3" class="mr-2 mt-1">
-      <nuxt-link to="/cart">
+    <v-badge color="#41AB55" overlap :content="CART.length" class="mr-2 mt-1">
+      <nuxt-link :to="{ path: '/cart'}">
         <v-avatar color="#ECF7EE" size="40" border="red">
           <v-icon small color="#41AB55">shopping_cart</v-icon>
         </v-avatar>
@@ -31,8 +32,14 @@
   </v-app-bar>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 export default {
   name: 'NavBar',
+  computed: {
+    ...mapGetters({
+      CART: 'purchases/CART',
+    }),
+  },
 }
 </script>
 <style scoped>

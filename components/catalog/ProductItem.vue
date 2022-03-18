@@ -5,33 +5,42 @@
         max-height="125"
         max-width="250"
         contain
-        :src="`/img/${img}`"
-      ></v-img>
-      <v-img
-        v-if="!img.length"
-        max-height="125"
-        max-width="250"
-        contain
-        :src="`/img/no-image.png`"
+        :src="!product.img ? `/img/no-image.png` : `/img/${product.img}`"
       ></v-img>
     </div>
-    <v-card-title style="font-size:15px">{{ title }}</v-card-title>
+    <v-card-title style="font-size: 15px">{{ product.title }}</v-card-title>
     <v-card-title class="grey--text text-grey-darken-1 caption mt-n6">{{
-      subtitle
+      product.subtitle
     }}</v-card-title>
-    <v-card-title class="mt-n4">{{ price }}</v-card-title>
+    <v-card-title class="mt-n4">{{ product.price }}$</v-card-title>
     <v-card-actions class="mw-2 mt-n4">
-      <v-btn color="green" outlined class="mt-n2" icon add :disabled="!count" @click="decrement">
+      <v-btn
+        color="green"
+        outlined
+        class="mt-n2"
+        icon
+        add
+        :disabled="!this.product.qty || cart_data.includes(this.product)"
+        @click="decrement"
+      >
         <v-icon color="green">remove</v-icon>
       </v-btn>
       <span class="mx-2"
-        ><strong>{{ count }}</strong></span
+        ><strong>qty:{{ product.qty }}</strong></span
       >
       <v-btn color="green" outlined class="mt-n2" icon add @click="increment">
         <v-icon color="green">add</v-icon>
       </v-btn>
       <v-spacer></v-spacer>
-      <v-btn outlined icon rounded color="green" dark class="mt-n2"
+      <v-btn
+        outlined
+        icon
+        rounded
+        color="green"
+        dark
+        class="mt-n2"
+        :disabled="!this.product.qty || cart_data.includes(this.product)"
+        @click="addToCart"
         ><v-icon dark>local_mall</v-icon></v-btn
       >
     </v-card-actions>
@@ -41,31 +50,29 @@
 export default {
   name: 'ProductItem',
   props: {
-    title: {
-      type: String,
+    product: {
+      type: Object,
+      required: true,
+      default() {
+        return {}
+      },
     },
-    price: {
-      type: String,
-    },
-    subtitle: {
-      type: String,
-    },
-    img: {
-      type: String,
-      default: 'no-image.png',
+    cart_data: {
+      type: Array,
     },
   },
-  data() {
-    return {
-      count: 0,
-    }
+  mounted() {
+    this.$set(this.product, 'qty', 1)
   },
   methods: {
+    addToCart() {
+      this.$emit('addToCart', this.product)
+    },
     increment() {
-      this.count += 1
+      this.product.qty++
     },
     decrement() {
-      this.count -= 1
+      this.product.qty--
     },
   },
 }
