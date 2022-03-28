@@ -3,9 +3,6 @@ import colors from 'vuetify/es5/util/colors'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   target: 'static',
-  router: {
-    base: '/nuxt-eshop/'
-  },
   head: {
     titleTemplate: '%s - nuxt-eshop',
     title: 'nuxt-eshop',
