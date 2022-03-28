@@ -4,7 +4,7 @@ export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   target: 'static',
   router: {
-    base: '/<nuxt-eshop>/'
+    base: '/nuxt-eshop/'
   },
   head: {
     titleTemplate: '%s - nuxt-eshop',
